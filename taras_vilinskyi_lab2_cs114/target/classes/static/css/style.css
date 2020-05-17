@@ -1,0 +1,32 @@
+body {
+    font: 13px/20px "Teko", Tahoma, Verdana, sans-serif;
+    color: #404040;
+    background: #ffa64d;
+    padding: 30px;
+}
+
+.description {
+    font-size: 18px;
+}
+
+.form_header {
+    font-size: 24px;
+    background-color: #FFFAFA;
+}
+
+#description_title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#content {
+    position: relative;
+}
+
+#content img {
+    position: absolute;
+    width: 20%;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+}

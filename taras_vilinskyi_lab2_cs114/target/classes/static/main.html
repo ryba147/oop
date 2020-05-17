@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Main Page</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="/media/ticket.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="content">
+    <img src="/media/logoMain.jpg" alt="logo" />
+</div>
+
+<div class="description">
+    <div id="description_title">Сервіс покупки авіаквитків, квитків на автобус та поїзд</div><br>
+    Для зручності тестування було мінімально оформлено фронтенд :)<br>
+    <ul>
+        <li>Щоб користуватись сайтом, необхідно зареєструватись.</li>
+    </ul>
+    Ім'я та пароль повинні бути довжиною >= 3 символів, інакше акаунт не буде створено.<br>
+    При покупці квитка одним з користувачів, квиток уже не буде доступним для покупки іншим користувачам.<br>
+    Коли квитки закінчуються, відбувається генерація п'яти нових.<br>
+    Після продажу квитка, він повертається до каси.<br>
+    <table>Щоб провести пошук за назвою(BUS_/PLANE_/TRAIN_TICKET), спершу необхідно переглянути усі доступні квитки.</table><br>
+    <ul>
+        <li>Купуйте (id квитка можна переглянути обираючи [View available tickets]) </li>
+        <li>Продавайте</li>
+        <li>Переглядайте <i>доступні</i> квитки</li>
+        <li>Переглядайте <i>придбані</i> квитки</li>
+        <li>Проводьте пошук за типом квитка</li>
+    </ul>
+    <table>Переглядайте придбані квитки та деталі облікового запису обираючи [Go to account] <u>нижче</u>.</table><br>
+</div>
+<form action="/register" method="post">
+    <div class="form_header">Sign up</div>
+    <table>
+        <tr>
+            <td>
+                <label>
+                    <input type="text" name="name" placeholder="Name" minlength="3" required />
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    <input type="password" name="password" placeholder="Password" minlength="3" required />
+                </label>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Register" class="btn btn-sm btn-primary" />
+</form>
+<hr>
+<form action="/tickets" method="get">
+    <div class="form_header">Available tickets</div>
+    <table>
+    </table>
+    <input type="submit" value="View available tickets" class="btn btn-sm btn-info" />
+</form>
+<hr>
+<form action="/logIn" method="post">
+    <div class="form_header">Log in</div>
+    <table>
+        <tr>
+            <td>
+                <label>
+                    <input type="text" name="name" placeholder="Name" minlength="3" required />
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    <input type="password" name="password" placeholder="Password" minlength="3" required />
+                </label>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Log in" class="btn btn-sm btn-primary" />
+</form>
+<hr>
+<form action="/buyTicket" method="post">
+    <table>
+        <tr>
+            <div class="form_header">Buy a ticket: View <b>id</b> of available tickets by pressing [View available tickets]</div>
+            <td>
+                <label>
+                    <input type="text" name="id" placeholder="Enter id" />
+                </label>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Buy ticket" class="btn btn-sm btn-warning" />
+</form>
+<hr>
+<form action="/sellTicket" method="post">
+    <table>
+        <div class="form_header">Sell a ticket</div>
+        <tr>
+            <td>
+                <label>
+                    <input type="text" name="id" placeholder="Enter id" />
+                </label>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Sell ticket" class="btn btn-sm btn-warning" />
+</form>
+<hr>
+<form action="/ticketsByType" method="get">
+    <table>
+        <div class="form_header">Find a ticket by type: <i>BUS_TICKET</i>, <i>PLANE_TICKET</i> or <i>TRAIN_TICKET</i></div>
+        <tr>
+            <td><label>
+                <input type="text" name="type" placeholder="Enter a type" />
+                </label>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Sumbit" class="btn btn-sm btn-warning" />
+</form>
+<hr>
+<form action="/account" method="get">
+    <div class="form_header">Go to account</div>
+    <input type="submit" value="My account" class="btn btn-sm btn-success" />
+</form>
+</body>
+</html>
